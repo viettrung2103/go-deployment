@@ -37,3 +37,4 @@ docker compose up -d
 ```bash
    docker compose ps
 ```
+The application is now accessible via reverse proxy at http://localhost.
