@@ -15,9 +15,9 @@ services:
     image: viettrung21/bookmark-service:dev
 #    platform: linux/arm64
     container_name: bookmark_service
-    build:
-      context: ../bookmark-management
-      dockerfile: Dockerfile
+#    build:
+#      context: ../bookmark-management
+#      dockerfile: Dockerfile
     depends_on:
       - redis
 #    network_mode: host
