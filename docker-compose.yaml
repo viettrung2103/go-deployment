@@ -19,7 +19,11 @@ services:
 #      context: ../bookmark-management
 #      dockerfile: Dockerfile
     depends_on:
-      - redis
+#      - redis
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
 #    network_mode: host
     env_file:
       - ./bookmark_service/.env
@@ -74,3 +78,22 @@ services:
     depends_on:
       - bookmark_service
 
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    #    restart: always
+    ports:
+      - "5433:5432"
+#    environment:
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: admin
+#      POSTGRES_DB: bookmark
+    env_file:
+      - ./bookmark_service/.env
+    volumes:
+      - /tmp/golang-course-bookmark:/var/lib/postgresql/data:Z
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d bookmark-lesson" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
