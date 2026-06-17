@@ -4,7 +4,9 @@ services:
   redis:
     image: redis:alpine
     container_name: redis
-#    ports:
+    restart: always
+
+  #    ports:
 #      - 6379:6379
 
   bookmark_service:
@@ -81,7 +83,7 @@ services:
   postgres:
     image: postgres:17
     container_name: postgres
-    #    restart: always
+    restart: always
     ports:
       - "5433:5432"
 #    environment:
