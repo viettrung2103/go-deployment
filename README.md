@@ -26,7 +26,7 @@ The app is designed following the Microservices/Multi-container. Connection is d
 ```
 2. Initialize your runtime environment file:
 ```bash
-    cp .env.example.example .env.example
+    cp .env.example .env
    # Edit the .env.example file values to suit your environment needs
 ```
 3. Spin up the entire infrastructure stack in detached mode:
