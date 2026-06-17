@@ -17,7 +17,8 @@ services:
     image: viettrung21/bookmark-service:dev
 #    platform: linux/arm64
     container_name: bookmark_service
-#    build:
+    pull_policy: always
+    #    build:
 #      context: ../bookmark-management
 #      dockerfile: Dockerfile
     depends_on:
