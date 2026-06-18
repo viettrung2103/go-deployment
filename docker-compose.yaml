@@ -14,7 +14,7 @@ services:
 #    image: bookmark-service:ass_5
 #    build: ../bookmark-management
 #    after docker hub
-    image: viettrung21/bookmark-service
+    image: viettrung21/bookmark-service:dev
 #    platform: linux/arm64
     container_name: bookmark_service
 #    pull_policy: always
