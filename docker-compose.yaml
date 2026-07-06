@@ -11,11 +11,11 @@ services:
 
   bookmark_service:
 #    before docker hub
-    image: bookmark-service:dev
+#    image: bookmark-service:dev
 #    build: ../bookmark-management
-    build: .
+#    build: .
 #    after docker hub
-#    image: viettrung21/bookmark-service:dev
+    image: viettrung21/bookmark-service:dev
 #    platform: linux/arm64
     container_name: bookmark_service
 #    pull_policy: always
@@ -31,6 +31,9 @@ services:
 #    network_mode: host
     env_file:
       - ./bookmark_service/.env
+    volumes:
+      - ./private.pem:/app/private.pem:ro,z
+      - ./public.pem:/app/public.pem:ro,z
 # because of nginx so we dont need to expose the port
 #    ports:
 #      - 8080:8080
