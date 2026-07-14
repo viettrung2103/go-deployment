@@ -12,10 +12,10 @@ services:
   bookmark_service:
 #    before docker hub
 #    image: bookmark-service:dev
-#    build: ../bookmark-management
+    build: ../bookmark-management
 #    build: .
 #    after docker hub
-    image: viettrung21/bookmark-service:dev
+#    image: viettrung21/bookmark-service:dev
 #    platform: linux/arm64
     container_name: bookmark_service
 #    pull_policy: always

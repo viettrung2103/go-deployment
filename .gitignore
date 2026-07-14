@@ -1,3 +1,4 @@
 .env
 .idea/
-*.pem
+/private.pem
+/public.pem
