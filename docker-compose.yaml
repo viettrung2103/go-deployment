@@ -11,8 +11,8 @@ services:
 
   bookmark_service:
 #    before docker hub
-#    image: bookmark-service:dev
-    build: ../bookmark-management
+    image: bookmark-service:dev
+#    build: ../bookmark-management
 #    build: .
 #    after docker hub
 #    image: viettrung21/bookmark-service:dev
