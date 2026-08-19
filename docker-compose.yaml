@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   redis:
@@ -10,12 +10,13 @@ services:
 #      - 6379:6379
 
   bookmark_service:
+    restart: always
 #    before docker hub
 #    image: bookmark-service:dev
-    build: ../bookmark-management
+#    build: ../bookmark-management
 #    build: .
 #    after docker hub
-#    image: viettrung21/bookmark-service:dev
+    image: viettrung21/bookmark-service:dev
 #    platform: linux/arm64
     container_name: bookmark_service
 #    pull_policy: always
